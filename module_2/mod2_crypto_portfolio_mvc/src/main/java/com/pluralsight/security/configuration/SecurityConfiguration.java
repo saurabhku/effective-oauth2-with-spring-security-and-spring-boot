@@ -42,6 +42,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.rememberMe()
 				.tokenRepository(persistentTokenRepository)
 				.and()
+			.oauth2Login()
+				.and()
 			.authorizeRequests()
 				.mvcMatchers("/register","/login","/login-error",
 						"/login-verified").permitAll()
